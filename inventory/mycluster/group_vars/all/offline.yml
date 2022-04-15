@@ -7,17 +7,17 @@ gcr_image_repo: "{{ registry_host }}"
 docker_image_repo: "{{ registry_host }}"
 quay_image_repo: "{{ registry_host }}"
 
-kubeadm_download_url: "{{ files_repo }}/kubernetes/{{ kube_version }}/kubeadm"
-kubectl_download_url: "{{ files_repo }}/kubernetes/{{ kube_version }}/kubectl"
-kubelet_download_url: "{{ files_repo }}/kubernetes/{{ kube_version }}/kubelet"
+kubeadm_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubeadm"
+kubectl_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubectl"
+kubelet_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubelet"
 # etcd is optional if you **DON'T** use etcd_deployment=host
-etcd_download_url: "{{ files_repo }}/kubernetes/etcd/etcd-{{ etcd_version }}-linux-amd64.tar.gz"
-cni_download_url: "{{ files_repo }}/kubernetes/cni/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
-crictl_download_url: "{{ files_repo }}/kubernetes/cri-tools/crictl-{{ crictl_version }}-{{ ansible_system | lower }}-{{ image_arch }}.tar.gz"
+etcd_download_url: "{{ files_repo }}/kubernetes/etcd/etcd-v3.5.1-linux-amd64.tar.gz"
+cni_download_url: "{{ files_repo }}/kubernetes/cni/cni-plugins-linux-amd64-v1.0.1.tgz"
+crictl_download_url: "{{ files_repo }}/kubernetes/cri-tools/crictl-v1.23.0-linux-amd64.tar.gz"
 # If using Calico
-calicoctl_download_url: "{{ files_repo }}/kubernetes/calico/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
+calicoctl_download_url: "{{ files_repo }}/kubernetes/calico/v3.21.4/calicoctl-linux-amd64"
 # If using Calico with kdd
-calico_crds_download_url: "{{ files_repo }}/kubernetes/calico/{{ calico_version }}.tar.gz"
+calico_crds_download_url: "{{ files_repo }}/kubernetes/calico/v3.21.4.tar.gz"
 # Containerd
 containerd_download_url: "{{ files_repo }}/containerd-{{ containerd_version }}-linux-{{ image_arch }}.tar.gz"
 runc_download_url: "{{ files_repo }}/runc.{{ image_arch }}"
