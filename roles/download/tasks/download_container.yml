@@ -1,5 +1,34 @@
 ---
 - block:
+    - name: Move foo to bar
+      command: mv /etc/containers/registries.conf /etc/containers/registries.conf_old
+      tags:
+        - facts
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+        src: registries.conf
+        dest: /etc/containers/registries.conf
+        owner: root
+        group: root
+        mode: '0644'
+      tags:
+        - facts
+
+    - name: Stop service httpd, if started
+      ansible.builtin.service:
+        name: crio
+        state: stopped
+      tags:
+        - facts
+
+    - name: Stop service httpd, if started
+      ansible.builtin.service:
+        name: crio
+        state: started
+      tags:
+        - facts
+
     - name: set default values for flag variables
       set_fact:
         image_is_cached: false
