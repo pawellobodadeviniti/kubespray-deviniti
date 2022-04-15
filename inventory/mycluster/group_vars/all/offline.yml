@@ -11,7 +11,7 @@ kubeadm_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubeadm"
 kubectl_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubectl"
 kubelet_download_url: "{{ files_repo }}/kubernetes/v1.23.5/kubelet"
 # etcd is optional if you **DON'T** use etcd_deployment=host
-etcd_download_url: "{{ files_repo }}/kubernetes/etcd/etcd-v3.5.1-linux-amd64.tar.gz"
+etcd_download_url: "{{ files_repo }}/kubernetes/etcd/etcd-v3.5.3-linux-amd64.tar.gz"
 cni_download_url: "{{ files_repo }}/kubernetes/cni/cni-plugins-linux-amd64-v1.0.1.tgz"
 crictl_download_url: "{{ files_repo }}/kubernetes/cri-tools/crictl-v1.23.0-linux-amd64.tar.gz"
 # If using Calico
